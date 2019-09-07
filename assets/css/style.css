@@ -1,0 +1,45 @@
+body {
+    background-image: url("../images/morocco-blue.png");
+}
+
+h1 {
+    background-color: #cb6f34;
+    color: white;
+    padding: 5px;
+}
+
+.directions {
+    background-color: #fae5cf;
+    color: #9ebd7e;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#random-number {
+    background-color: #52cb86;
+    box-sizing: border-box;
+}
+
+#talley {
+    background-color: #3afefe;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#score {
+    background-color: #1fa397;
+    color: white;
+    box-sizing: border-box;   
+}
+
+#score-is {
+    background-color: #1fa397;
+    color: white;
+    box-sizing: border-box;
+}
+
+#image-1, #image-2,
+#image-3, #image-4,
+#image-5 {
+    background-color: white;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crystals Collector Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-2">
+            <h1>Crystals Collector!</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 directions">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add
+                    a specific amount of points to your total score.</p>
+                <p>You win the game by matching your total score to the random number, you lose
+                    the game if your total score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time the game starts, the game will change the values of each crystal.</p>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-sm-3 col-lg-3 mr-2" id="random-number"></div>
+            <div class="col-sm-2 col-lg-2" id="talley">
+                <p>Wins:<div id="wins"></div>
+                </p>
+                <p>Losses:<div id="losses"></div>
+                </p>
+            </div>
+        </div>
+
+        <div class="row crystals mt-2">
+            <div class="mr-2" id="image-1">
+                <img src="assets/images/icons8-emerald-48.png" alt="emerald">
+            </div>
+            <div class="mr-2" id="image-2">
+                <img src="assets/images/icons8-jewel-48.png" alt="jewel">
+            </div>
+            <div class="mr-2" id="image-3">
+                <img  src="assets/images/icons8-ruby-48.png" alt="ruby">
+            </div>
+            <div id="image-4">
+                <img src="assets/images/icons8-topaz-48.png" alt="topaz">
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-sm-4 col-lg-4" id="score">
+                <p>Your total score is:</p>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-sm-4 col-lg-4" id="score-is"><p>test</p></div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

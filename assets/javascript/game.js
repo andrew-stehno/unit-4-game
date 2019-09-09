@@ -38,25 +38,26 @@ $(document).ready(function () {
         $("#image-1").on("click", function () {
             gameData.scoreCounter = gameData.scoreCounter + gameData.emeraldValue;
             $("#score-is").text(gameData.scoreCounter);
+            endResult();
         });
 
         $("#image-2").on("click", function () {
             gameData.scoreCounter = gameData.scoreCounter + gameData.jewelValue;
             $("#score-is").text(gameData.scoreCounter);
+            endResult();
         });
 
         $("#image-3").on("click", function () {
             gameData.scoreCounter = gameData.scoreCounter + gameData.rubyValue;
             $("#score-is").text(gameData.scoreCounter);
+            endResult();
         });
 
         $("#image-4").on("click", function () {
             gameData.scoreCounter = gameData.scoreCounter + gameData.topazValue;
             $("#score-is").text(gameData.scoreCounter);
+            endResult();
         });
-
-
-
     }
 
     function targetScore(min, max) {
@@ -77,17 +78,24 @@ $(document).ready(function () {
         $("#losses").html(gameData.losses);
         $("#score-is").html(gameData.scoreCounter);
     }
-
+    
     function resetGame() {
         targetScore();
         gemValue();
+        gameData.scoreCounter = null;
     }
 
-    init();
+    function endResult() {
+        if (gameData.scoreCounter === gameData.randomTarget) {
+            gameData.win++;
+            resetGame();
+        }
+        else if (gameData.scoreCounter > gameData.randomTarget) {
+            gameData.losses--;
+            resetGame();
+        }
+    }
 
-    // Main processes are listed below
-    // ==============================================================
-
-
+    init()
 
 });

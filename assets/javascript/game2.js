@@ -4,8 +4,7 @@ $(document).ready(function () {
 
     // Game Data goes here:
     // ==============================================================
-    let wins = 0;
-    let losses = 0;
+
     let gameData = {
         emeraldValue: gemValue(1, 12),
         jewelValue: gemValue(1, 12),
@@ -13,11 +12,9 @@ $(document).ready(function () {
         topazValue: gemValue(1, 12),
         randomTarget: targetScore(19, 120),
         scoreCounter: null,
+        wins: 0,
+        losses: 0,
     }
-
-    init();
-    whenClicked();
-
     console.log("emerald value: " + gameData.emeraldValue);
     console.log("jewel value: " + gameData.jewelValue);
     console.log("ruby value: " + gameData.rubyValue);
@@ -28,15 +25,9 @@ $(document).ready(function () {
     // ==============================================================
 
     function init() {
-        gameData = {
-            emeraldValue: gemValue(1, 12),
-            jewelValue: gemValue(1, 12),
-            rubyValue: gemValue(1, 12),
-            topazValue: gemValue(1, 12),
-            randomTarget: targetScore(19, 120),
-            scoreCounter: null,
-        }
+        whenClicked();
         targetScore();
+        gemValue();
         displayAll();
     }
 
@@ -83,33 +74,30 @@ $(document).ready(function () {
 
     function displayAll() {
         $("#random-number").text(gameData.randomTarget);
-        $("#wins").html(wins);
-        $("#losses").html(losses);
+        $("#wins").html(gameData.wins);
+        $("#losses").html(gameData.losses);
         $("#score-is").html(gameData.scoreCounter);
     }
-
+    
     function resetGame() {
-        init();
-        console.log("emerald value: " + gameData.emeraldValue);
-        console.log("jewel value: " + gameData.jewelValue);
-        console.log("ruby value: " + gameData.rubyValue);
-        console.log("topaz value: " + gameData.topazValue);
-        console.log("target value: " + gameData.randomTarget);
+        targetScore();
+        gemValue();
+        gameData.scoreCounter = null;
     }
 
     function endResult() {
         if (gameData.scoreCounter === gameData.randomTarget) {
-            wins = wins + 1;
+            gameData.wins = gameData.wins + 1;
             displayAll();
             resetGame();
         }
         else if (gameData.scoreCounter > gameData.randomTarget) {
-            losses = losses + 1;
+            gameData.losses = gameData.losses + 1;
             displayAll();
             resetGame();
         }
     }
 
-    
+    init()
 
 });

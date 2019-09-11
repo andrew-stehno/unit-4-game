@@ -18,6 +18,7 @@ h1 {
 #random-number {
     background-color: #52cb86;
     box-sizing: border-box;
+    font-size: 24px;
 }
 
 #talley {
@@ -36,6 +37,7 @@ h1 {
     background-color: #1fa397;
     color: white;
     box-sizing: border-box;
+    font-size: 24px;
 }
 
 #image-1, #image-2,
